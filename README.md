@@ -46,7 +46,7 @@ A Django-based FAQ management system that supports multilingual content, caching
    venv\Scripts\activate     # For Windows
 
 3. **Install dependencies:**
-    ```bash
+   ```bash
    pip install -r requirements.txt
 
 4. **Set up Redis (Make sure Redis is installed and running on your local machine):**
@@ -54,8 +54,8 @@ A Django-based FAQ management system that supports multilingual content, caching
    ```bash
    redis-server
 5. **Configure settings:**
-   ```bash
    Add your Google API key to the settings or install googletrans if you choose to use the free version of Google Translate.
+   ```bash
    In faq_project/settings.py, ensure the caching configuration is set up with Redis.
 
 6. **Apply migrations:**
@@ -66,8 +66,31 @@ A Django-based FAQ management system that supports multilingual content, caching
    ```bash
    python manage.py createsuperuser
 
-8.**Start the development server:**
+8. **Start the development server:**
    ```bash
-  python manage.py runserver
+   python manage.py runserver
 
+Now you can access the application in your browser at http://127.0.0.1:8000
 
+## Admin Panel
+To access the Django Admin Panel, navigate to http://127.0.0.1:8000/admin/ and log in with the superuser credentials you created earlier.
+
+### API Usage
+GET /faqs - Fetch all FAQs.
+Query parameters: ?lang={language_code} (e.g., ?lang=en, ?lang=hi)
+
+### Testing
+To run tests, use the following command:
+   ```bash
+    python manage.py test
+   ```
+
+Ensure you have set up the required configurations and models as per the instructions to test the functionalities properly.
+
+### Contributing
+
+1. Fork the repository.
+2. Create a new branch for your changes.
+3. Commit your changes.
+4. Push to your forked repository.
+5. Create a pull request.
